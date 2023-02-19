@@ -6,7 +6,10 @@ This library contains an in-memory (and persistable) keystore for processes that
 
 ## Features
 The following is a list of key object and keystore features:
-* A keystore instance supports the generation, verification, usage, and persistence of encryption keys of: RSA, AES, and ECDSA.
+* A keystore instance supports the generation, verification, usage, and persistence of encryption keys of:
+** RSA
+** AES
+** ECDSA
 * It currently leverages base .NET encryption libraries. But, can be extended to create keys in Bouncy Castle or LibSodium.
 * Both key object and keystore classes are versioned, so they can be correctly loaded by (and migrated to) newer versions.
 * A keystore updates a version counter each time its contents are changed, for easier reconciliation.
