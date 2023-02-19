@@ -32,7 +32,20 @@ This library depends on:
 * [NLog](https://github.com/NLog/NLog/)
 
 ## Usage
-This library is composed of two basic element:
+Here is some usage examples.
+Creating in-memory keystore with new keys:
+```
+            // Create three keys...
+            KeyStore_v2_Base.Create_New_AES_Key(Guid.NewGuid().ToString(), 256, out var k2);
+            KeyStore_v2_Base.Create_New_ECDSA_KeyPair(Guid.NewGuid().ToString(), out var k3);
+            KeyStore_v2_Base.Create_New_RSA_KeyPair(Guid.NewGuid().ToString(), 512, out var k4);
+
+            // Add all three keys to a new in-memory keystore instance...
+            var ks = new KeyStore_v2_Base();
+            var res1 = ks.AddKey_toStore(k1);
+            var res2 = ks.AddKey_toStore(k2);
+            var res3 = ks.AddKey_toStore(k3);
+```
 * Key Object - Holds a single encryption key and metadata. For asymmetric keys, can contain both private and public key data.
 * Key Store - Manages a collection of key objects using CRUD and predicate filter query functionality.\
 
