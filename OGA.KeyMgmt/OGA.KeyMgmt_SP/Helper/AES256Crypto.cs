@@ -4,7 +4,7 @@ using System.Text;
 namespace OGA.KeyMgmt.Helper
 {
     /// <summary>
-    /// Adapted from 
+    /// Adapted from microsoft site examples of AES usage.
     /// </summary>
     public class AES256Crypto
     {
