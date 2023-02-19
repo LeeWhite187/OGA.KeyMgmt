@@ -42,11 +42,3 @@ It is currently built using Visual Studio 2019 17.1.
 
 ## License
 Please see the [License](LICENSE).
-
-## Opinionation Apology...
-This library references NLog, directly, for now.\
-I understand this may appear overly opinionated, at the domain layer. I agree... though, NLog works very well.\
-Once I get a chance to circle back, and work through a more agnostic logging interface, I will update (removing the specific logger tie).
-
-You're welcome to swap out and compile whatever logger you'd like, of course.\
-If you have the need or feel inclined, send me feedback or a pull, so I know it helps someone, to make time and generalize the logger.
