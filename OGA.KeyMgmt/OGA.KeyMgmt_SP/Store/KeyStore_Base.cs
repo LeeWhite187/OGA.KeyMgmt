@@ -23,16 +23,7 @@ namespace OGA.KeyMgmt.Store
     {
         #region Private Fields
 
-        protected static byte[] _saltbytes;
-        static protected string salt = "salted value";
-
         protected Dictionary<string, KeyObject_v2> _keys;
-
-        static KeyStore_v2_Base()
-        {
-            _saltbytes = ASCIIEncoding.ASCII.GetBytes(salt);
-
-        }
 
         protected int _keystoreversion = 2;
 
@@ -721,8 +712,6 @@ namespace OGA.KeyMgmt.Store
             string candidate_string = "";
             string cyphertext = null;
             string decrypted_string = "";
-            // RijndaelManaged object used to encrypt the data.
-            System.Security.Cryptography.RijndaelManaged aesAlg = null;
 
             // Check that the given key is an AES key...
             if (kobj.KeyType != eKeyType.AES.ToString())
@@ -764,37 +753,8 @@ namespace OGA.KeyMgmt.Store
                 // Either way, we already have a private key in a native string datatype.
                 // So, we will simply use it without manipulation.
 
-                // Generate the key from the shared secret and the salt...
-                System.Security.Cryptography.Rfc2898DeriveBytes key = new System.Security.Cryptography.Rfc2898DeriveBytes(privkey, _saltbytes);
-
-                // Create a RijndaelManaged object
-                aesAlg = new System.Security.Cryptography.RijndaelManaged();
-
-                aesAlg.Key = key.GetBytes(aesAlg.KeySize / 8);
-
-                // Create an encryptor to perform the stream transform.
-                System.Security.Cryptography.ICryptoTransform encryptor = aesAlg.CreateEncryptor(aesAlg.Key, aesAlg.IV);
-
-                // Create the streams used for encryption.
-                using (System.IO.MemoryStream msEncrypt = new System.IO.MemoryStream())
-                {
-                    // prepend the IV
-                    msEncrypt.Write(BitConverter.GetBytes(aesAlg.IV.Length), 0, sizeof(int));
-
-                    msEncrypt.Write(aesAlg.IV, 0, aesAlg.IV.Length);
-
-                    using (System.Security.Cryptography.CryptoStream csEncrypt =
-                        new System.Security.Cryptography.CryptoStream(msEncrypt, encryptor, System.Security.Cryptography.CryptoStreamMode.Write))
-                    {
-                        using (System.IO.StreamWriter swEncrypt = new System.IO.StreamWriter(csEncrypt))
-                        {
-                            //Write all data to the stream.
-                            swEncrypt.Write(candidate_string);
-                        }
-                    }
-
-                    cyphertext = Convert.ToBase64String(msEncrypt.ToArray());
-                }
+                // Encrypt the test data...
+                cyphertext = OGA.KeyMgmt.Helper.AES256Crypto.EncryptStringAES(candidate_string, privkey);
             }
             catch (Exception e)
             {
@@ -804,12 +764,6 @@ namespace OGA.KeyMgmt.Store
                         $"Exception caught while attempting to check that we can sign and verify with key {kobj.KeyName}.");
 
                 return -10;
-            }
-            finally
-            {
-                // Clear the RijndaelManaged object.
-                if (aesAlg != null)
-                    aesAlg.Clear();
             }
 
             // Decrypt the test data...
@@ -821,34 +775,8 @@ namespace OGA.KeyMgmt.Store
                 // Either way, we already have a private key in a native string datatype.
                 // So, we will simply use it without manipulation.
 
-                // Generate the key from the shared secret and the salt
-                System.Security.Cryptography.Rfc2898DeriveBytes key = new System.Security.Cryptography.Rfc2898DeriveBytes(privkey, _saltbytes);
-
-                // Create the streams used for decryption.                
-                byte[] bytes = Convert.FromBase64String(cyphertext);
-
-                using (System.IO.MemoryStream msDecrypt = new System.IO.MemoryStream(bytes))
-                {
-                    // Create a RijndaelManaged object with the specified key and IV.
-                    aesAlg = new System.Security.Cryptography.RijndaelManaged();
-                    aesAlg.Key = key.GetBytes(aesAlg.KeySize / 8);
-
-                    // Get the initialization vector from the encrypted stream
-                    aesAlg.IV = ReadByteArray(msDecrypt);
-
-                    // Create a decrytor to perform the stream transform.
-                    System.Security.Cryptography.ICryptoTransform decryptor = aesAlg.CreateDecryptor(aesAlg.Key, aesAlg.IV);
-
-                    using (System.Security.Cryptography.CryptoStream csDecrypt =
-                        new System.Security.Cryptography.CryptoStream(msDecrypt, decryptor, System.Security.Cryptography.CryptoStreamMode.Read))
-                    {
-                        using (System.IO.StreamReader srDecrypt = new System.IO.StreamReader(csDecrypt))
-
-                            // Read the decrypted bytes from the decrypting stream
-                            // and place them in a string.
-                            decrypted_string = srDecrypt.ReadToEnd();
-                    }
-                }
+                // Decrypt the test data...
+                decrypted_string = OGA.KeyMgmt.Helper.AES256Crypto.DecryptStringAES(cyphertext, privkey);
 
                 // Check if the source string was recovered...
                 if (decrypted_string != candidate_string)
@@ -872,12 +800,6 @@ namespace OGA.KeyMgmt.Store
                         $"Exception caught while attempting to check that the AES key is good: KeyName = {kobj.KeyName}.");
 
                 return -10;
-            }
-            finally
-            {
-                // Clear the RijndaelManaged object.
-                if (aesAlg != null)
-                    aesAlg.Clear();
             }
         }
 

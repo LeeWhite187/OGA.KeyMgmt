@@ -656,7 +656,7 @@ namespace OGA.KeyMgmt.Store
             }
 
             // Use AES256 to decrypt the data section...
-            string data = NETCore_Common.Crypto.DecryptStringAES(keyData, this._storageencryptionkey.PrivateKey);
+            string data = OGA.KeyMgmt.Helper.AES256Crypto.DecryptStringAES(keyData, this._storageencryptionkey.PrivateKey);
 
             return data;
         }
@@ -681,7 +681,7 @@ namespace OGA.KeyMgmt.Store
             }
 
             // Use AES256 to encrypt the data section...
-            string data = NETCore_Common.Crypto.EncryptStringAES(keyData, this._storageencryptionkey.PrivateKey);
+            string data = OGA.KeyMgmt.Helper.AES256Crypto.EncryptStringAES(keyData, this._storageencryptionkey.PrivateKey);
 
             return data;
         }

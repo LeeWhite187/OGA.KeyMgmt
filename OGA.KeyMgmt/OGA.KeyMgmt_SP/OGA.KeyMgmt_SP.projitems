@@ -9,13 +9,14 @@
     <Import_RootNamespace>OGA.KeyMgmt</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Config\KeyStore_StorageStruct.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Helper\Conversions.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Model\Enumerations.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Model\KeyObject_v2.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Store\KeyStore_Base.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Store\KeyStore_v2_File.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Store\KeyStore_v2_JsonConfig.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Store\KeyStore_v2_Mem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Config\KeyStore_StorageStruct.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\AES256Crypto.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helper\Conversions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Enumerations.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\KeyObject_v2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Store\KeyStore_Base.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Store\KeyStore_v2_File.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Store\KeyStore_v2_JsonConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Store\KeyStore_v2_Mem.cs" />
   </ItemGroup>
 </Project>

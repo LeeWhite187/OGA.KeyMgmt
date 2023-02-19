@@ -957,6 +957,8 @@ namespace NETCore_Common_Tests
 
             // Save the store to disk...
             var res2 = ks.Save();
+            if(res2 != 1)
+                Assert.Fail("Problem with saving.");
 
 
             // Now, create a second keystore, without a valid path...

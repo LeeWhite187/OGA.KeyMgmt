@@ -9,12 +9,12 @@
     <Import_RootNamespace>OGA.KeyMgmt_Tests_SP</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyObject_v2_Tests.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyStore_Base_Tests.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyStore_Config_Tests.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyStore_File_Tests.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyStore_Mem_Tests.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyStore_v2_JsonConfig_Tests.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyStore_v2_OfflineStorage_Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyObject_v2_Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyStore_Base_Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyStore_Config_Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyStore_File_Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyStore_Mem_Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyStore_v2_JsonConfig_Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyStore_v2_OfflineStorage_Tests.cs" />
   </ItemGroup>
 </Project>
