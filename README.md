@@ -12,7 +12,7 @@ The following is a list of key object and keystore features:
 * A keystore updates a version counter each time its contents are changed, for easier reconciliation.\
 * Persisted keystores are signed (via ECDSA) to ensure integrity and tampering. The signature is verified on load.\
 * Key objects can be retrieved from the store by name or by key properties, such as type, age, status, etc...\
-* Key queries are implemented using a predicate filter ([See PredicateBuilder](https://github.com/LeeWhite187/OGA.DomainBase/blob/main/OGA.DomainBase/OGA.DomainBase_SP/QueryHelpers/PredicateBuilder.cs)).
+* Key queries are implemented using a predicate filter ([See comments at top of PredicateBuilder](https://github.com/LeeWhite187/OGA.DomainBase/blob/main/OGA.DomainBase/OGA.DomainBase_SP/QueryHelpers/PredicateBuilder.cs)).
 
 ## Installation
 OGA.KeyMgmt is available via NuGet:
