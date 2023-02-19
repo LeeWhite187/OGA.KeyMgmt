@@ -3,6 +3,8 @@ Simple Key Manager with persistence to Json or file
 
 ## Description
 This library contains an in-memory (and persistable) keystore for processes that need to use or share encryption keys.
+It can be used as a process-wide, in-memory keystore, that holds keys, retrieved from a central secret authority.
+Or, it can manage keys that are stored in JSON or a file (saved in JSON format).
 
 ## Features
 The following is a list of key object and keystore features:
@@ -17,6 +19,7 @@ The following is a list of key object and keystore features:
 * Both key object and keystore classes are versioned, so they can be correctly loaded by (and migrated to) newer versions.
 * A keystore updates a version counter each time its contents are changed, for easier reconciliation.
 * Persisted keystores are signed (via ECDSA) to ensure integrity and tampering. The signature is verified on load.
+* At-rest encryption is used for securely storing private keys.
 
 ## Installation
 OGA.KeyMgmt is available via NuGet:
@@ -27,6 +30,12 @@ This library depends on:
 * [OGA.SharedKernel](https://github.com/LeeWhite187/OGA.SharedKernel)
 * [NewtonSoft.Json](https://github.com/JamesNK/Newtonsoft.Json)
 * [NLog](https://github.com/NLog/NLog/)
+
+## Structure
+This library is composed of three basic element:
+* Key Objects - Holds an encryption key of 
+* 
+* 
 
 ## Building OGA.KeyMgmt
 This library is built with the new SDK-style projects.
