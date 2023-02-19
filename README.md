@@ -36,7 +36,9 @@ This library is composed of two basic element:
 * Key Object - Holds a single encryption key and metadata. For asymmetric keys, can contain both private and public key data.
 * Key Store - Manages a collection of key objects using CRUD and predicate filter query functionality.\
 
-
+```
+code blocks for commands
+```
 
 * 
 
