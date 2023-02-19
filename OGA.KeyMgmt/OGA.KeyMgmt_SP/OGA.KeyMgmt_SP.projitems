@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>321a828d-44e9-41ae-83ce-e24c3c58e6f7</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>OGA.KeyMgmt</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Config\KeyStore_StorageStruct.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Helper\Conversions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Model\Enumerations.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Model\KeyObject_v2.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Store\KeyStore_Base.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Store\KeyStore_v2_File.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Store\KeyStore_v2_JsonConfig.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\Store\KeyStore_v2_Mem.cs" />
+  </ItemGroup>
+</Project>

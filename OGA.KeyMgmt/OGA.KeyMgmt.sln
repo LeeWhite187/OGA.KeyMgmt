@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OGA.KeyMgmt_Dev", "OGA.KeyMgmt_Dev\OGA.KeyMgmt_Dev.csproj", "{5578E669-E92A-4C8E-BC9A-B819EC16EBDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OGA.KeyMgmt_NET5", "OGA.KeyMgmt_NET5\OGA.KeyMgmt_NET5.csproj", "{F70E4E08-24E7-42A5-9E1D-F8C61E40C65C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OGA.KeyMgmt_NET6", "OGA.KeyMgmt_NET6\OGA.KeyMgmt_NET6.csproj", "{C20869F8-7A2A-4AE6-8D55-A9F7FC257BC3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OGA.KeyMgmt_NET5_Tests", "OGA.KeyMgmt_NET5_Tests\OGA.KeyMgmt_NET5_Tests.csproj", "{BBA02D7E-C358-4F91-AAC1-AE82B35AAC05}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OGA.KeyMgmt_NET6_Tests", "OGA.KeyMgmt_NET6_Tests\OGA.KeyMgmt_NET6_Tests.csproj", "{FE14BD89-AED3-4D2D-B4EB-ACA8CA312545}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "OGA.KeyMgmt_SP", "OGA.KeyMgmt_SP\OGA.KeyMgmt_SP.shproj", "{321A828D-44E9-41AE-83CE-E24C3C58E6F7}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "OGA.KeyMgmt_Tests_SP", "OGA.KeyMgmt_Tests_SP\OGA.KeyMgmt_Tests_SP.shproj", "{07180530-1CB8-406D-8159-2A4AA195654A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5578E669-E92A-4C8E-BC9A-B819EC16EBDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5578E669-E92A-4C8E-BC9A-B819EC16EBDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5578E669-E92A-4C8E-BC9A-B819EC16EBDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5578E669-E92A-4C8E-BC9A-B819EC16EBDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F70E4E08-24E7-42A5-9E1D-F8C61E40C65C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F70E4E08-24E7-42A5-9E1D-F8C61E40C65C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F70E4E08-24E7-42A5-9E1D-F8C61E40C65C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F70E4E08-24E7-42A5-9E1D-F8C61E40C65C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C20869F8-7A2A-4AE6-8D55-A9F7FC257BC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C20869F8-7A2A-4AE6-8D55-A9F7FC257BC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C20869F8-7A2A-4AE6-8D55-A9F7FC257BC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C20869F8-7A2A-4AE6-8D55-A9F7FC257BC3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA02D7E-C358-4F91-AAC1-AE82B35AAC05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA02D7E-C358-4F91-AAC1-AE82B35AAC05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA02D7E-C358-4F91-AAC1-AE82B35AAC05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA02D7E-C358-4F91-AAC1-AE82B35AAC05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE14BD89-AED3-4D2D-B4EB-ACA8CA312545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE14BD89-AED3-4D2D-B4EB-ACA8CA312545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE14BD89-AED3-4D2D-B4EB-ACA8CA312545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE14BD89-AED3-4D2D-B4EB-ACA8CA312545}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {30B9B041-1795-4E56-A77B-E97F2571FB42}
+	EndGlobalSection
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		OGA.KeyMgmt_Tests_SP\OGA.KeyMgmt_Tests_SP.projitems*{07180530-1cb8-406d-8159-2a4aa195654a}*SharedItemsImports = 13
+		OGA.KeyMgmt_SP\OGA.KeyMgmt_SP.projitems*{321a828d-44e9-41ae-83ce-e24c3c58e6f7}*SharedItemsImports = 13
+		OGA.KeyMgmt_Tests_SP\OGA.KeyMgmt_Tests_SP.projitems*{bba02d7e-c358-4f91-aac1-ae82b35aac05}*SharedItemsImports = 5
+		OGA.KeyMgmt_SP\OGA.KeyMgmt_SP.projitems*{c20869f8-7a2a-4ae6-8d55-a9f7fc257bc3}*SharedItemsImports = 5
+		OGA.KeyMgmt_SP\OGA.KeyMgmt_SP.projitems*{f70e4e08-24e7-42a5-9e1d-f8c61e40c65c}*SharedItemsImports = 5
+		OGA.KeyMgmt_Tests_SP\OGA.KeyMgmt_Tests_SP.projitems*{fe14bd89-aed3-4d2d-b4eb-aca8ca312545}*SharedItemsImports = 5
+	EndGlobalSection
+EndGlobal

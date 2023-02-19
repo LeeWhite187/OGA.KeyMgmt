@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <PackageId>OGA.KeyMgmt</PackageId>
+    <AssemblyName>$(MSBuildProjectName)</AssemblyName>
+    <RootNamespace>OGA.KeyMgmt</RootNamespace>
+  </PropertyGroup>
+
+  <Import Project="..\OGA.KeyMgmt_SP\OGA.KeyMgmt_SP.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="Nanoid" Version="2.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
+    <PackageReference Include="OGA.SharedKernel" Version="2.0.0" />
+  </ItemGroup>
+
+</Project>

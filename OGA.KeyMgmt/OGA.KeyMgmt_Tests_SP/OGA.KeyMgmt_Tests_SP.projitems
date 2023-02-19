@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>07180530-1cb8-406d-8159-2a4aa195654a</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>OGA.KeyMgmt_Tests_SP</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyObject_v2_Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyStore_Base_Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyStore_Config_Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyStore_File_Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyStore_Mem_Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyStore_v2_JsonConfig_Tests.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyMgmt\KeyStore_v2_OfflineStorage_Tests.cs" />
+  </ItemGroup>
+</Project>
