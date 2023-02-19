@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>OGA.KeyMgmt</id>
+    <title>OGA Key Management</title>
+    <version>1.3.1</version>
+    <authors>Lee White</authors>
+    <owners>Lee White</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Simple Key Manager with persistence to Json or file</description>
+    <releaseNotes>(Please write the package release notes in "OGA.KeyMgmt-RELEASE-NOTES.txt".)</releaseNotes>
+    <copyright>$copyright$</copyright>
+	<repository type="git" url="https://github.com/LeeWhite187/OGA.KeyMgmt" />
+    <license type="expression">MIT</license>
+
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="NLog" version="5.0.4" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework="net5.0">
+        <dependency id="NLog" version="5.0.4" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src=".\OGA.SharedKernel_NET6\bin\DebugWin\net6.0\win-x64\OGA.KeyMgmt.dll" target="ref\net6.0" />
+    <file src=".\OGA.SharedKernel_NET6\bin\DebugWin\net6.0\win-x64\OGA.KeyMgmt.dll" target="runtimes\win-x64\lib\net6.0" />
+    <file src=".\OGA.SharedKernel_NET6\bin\DebugWin\net6.0\win-x64\OGA.KeyMgmt.pdb" target="runtimes\win-x64\lib\net6.0" />
+    <file src=".\OGA.SharedKernel_NET6\bin\DebugLinux\net6.0\linux-x64\OGA.KeyMgmt.dll" target="runtimes\linux-x64\lib\net6.0" />
+    <file src=".\OGA.SharedKernel_NET6\bin\DebugLinux\net6.0\linux-x64\OGA.KeyMgmt.pdb" target="runtimes\linux-x64\lib\net6.0" />
+
+    <file src=".\OGA.SharedKernel_NET5\bin\DebugWin\net5.0\win-x64\OGA.KeyMgmt.dll" target="ref\net5.0" />
+    <file src=".\OGA.SharedKernel_NET5\bin\DebugWin\net5.0\win-x64\OGA.KeyMgmt.dll" target="runtimes\win-x64\lib\net5.0" />
+    <file src=".\OGA.SharedKernel_NET5\bin\DebugWin\net5.0\win-x64\OGA.KeyMgmt.pdb" target="runtimes\win-x64\lib\net5.0" />
+    <file src=".\OGA.SharedKernel_NET5\bin\DebugLinux\net5.0\linux-x64\OGA.KeyMgmt.dll" target="runtimes\linux-x64\lib\net5.0" />
+    <file src=".\OGA.SharedKernel_NET5\bin\DebugLinux\net5.0\linux-x64\OGA.KeyMgmt.pdb" target="runtimes\linux-x64\lib\net5.0" />
+  </files>
+</package>
