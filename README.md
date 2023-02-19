@@ -7,15 +7,15 @@ This library contains an in-memory (and persistable) keystore for processes that
 ## Features
 A keystore instance supports the generation, verification, usage, and persistence of encryption keys of: RSA, AES, and ECDSA.\
 It currently leverages base .NET encryption libraries. But, can be extended to create keys in Bouncy Castle or LibSodium.\
-A persisted keystore is versioned, so that it can be correctly loaded by a newer keystore class version.\
-A keystore also updates a version counter each time its contents are changed, for easier reconciliation.\
-A persisted keystores can be signed (via ECDSA) to ensure integrity and tampering. It signature is verified on load.\
-Keys can be retrieved from the store by name, or by predicate filter ([See PredicateBuilder](https://github.com/LeeWhite187/OGA.DomainBase/blob/main/OGA.DomainBase/OGA.DomainBase_SP/QueryHelpers/PredicateBuilder.cs))
-
+Both key object and keystore classes are versioned, so they can be correctly loaded by (and migrated to) newer versions.\
+A keystore updates a version counter each time its contents are changed, for easier reconciliation.\
+Persisted keystores are signed (via ECDSA) to ensure integrity and tampering. The signature is verified on load.\
+Key objects can be retrieved from the store by name or by key properties, such as type, age, status, etc...\
+Key queries are implemented using a predicate filter ([See PredicateBuilder](https://github.com/LeeWhite187/OGA.DomainBase/blob/main/OGA.DomainBase/OGA.DomainBase_SP/QueryHelpers/PredicateBuilder.cs)).
 
 ## Installation
-OGA.DomainBase is available via NuGet:
-* NuGet Official Releases: [![NuGet](https://img.shields.io/nuget/vpre/OGA.DomainBase.svg?label=NuGet)](https://www.nuget.org/packages/OGA.DomainBase)
+OGA.KeyMgmt is available via NuGet:
+* NuGet Official Releases: [![NuGet](https://img.shields.io/nuget/vpre/OGA.KeyMgmt.svg?label=NuGet)](https://www.nuget.org/packages/OGA.KeyMgmt)
 
 ## Dependencies
 This library depends on:
@@ -23,7 +23,7 @@ This library depends on:
 * [NewtonSoft.Json](https://github.com/JamesNK/Newtonsoft.Json)
 * [NLog](https://github.com/NLog/NLog/)
 
-## Building OGA.DomainBase
+## Building OGA.KeyMgmt
 This library is built with the new SDK-style projects.
 It contains multiple projects, one for each of the following frameworks:
 * NET 5
