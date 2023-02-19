@@ -5,12 +5,12 @@ Simple Key Manager with persistence to Json or file
 This library contains an in-memory (and persistable) keystore for processes that need to use or share encryption keys.
 
 ## Features
-A keystore instance supports the generation, verification, usage, and persistence of encryption keys of: RSA, AES, and ECDSA.
-It currently leverages base .NET encryption libraries. But, can be extended to create keys in Bouncy Castle or LibSodium.
-A persisted keystore is versioned, so that it can be correctly loaded by a newer keystore class version.
-A keystore also updates a version counter each time its contents are changed, for easier reconciliation.
-A persisted keystores can be signed (via ECDSA) to ensure integrity and tampering. It signature is verified on load.
-Keys can be retrieved from the store by name, or by predicate filter ([See PredicateBuilder](https://github.com/LeeWhite187/OGA.DomainBase/blob/main/OGA.DomainBase/OGA.DomainBase_SP/QueryHelpers/PredicateBuilder.cs))
+A keystore instance supports the generation, verification, usage, and persistence of encryption keys of: RSA, AES, and ECDSA.\
+It currently leverages base .NET encryption libraries. But, can be extended to create keys in Bouncy Castle or LibSodium.\
+A persisted keystore is versioned, so that it can be correctly loaded by a newer keystore class version.\
+A keystore also updates a version counter each time its contents are changed, for easier reconciliation.\
+A persisted keystores can be signed (via ECDSA) to ensure integrity and tampering. It signature is verified on load.\
+Keys can be retrieved from the store by name, or by predicate filter ([See PredicateBuilder](https://github.com/LeeWhite187/OGA.DomainBase/blob/main/OGA.DomainBase/OGA.DomainBase_SP/QueryHelpers/PredicateBuilder.cs))\
 
 
 ## Installation
