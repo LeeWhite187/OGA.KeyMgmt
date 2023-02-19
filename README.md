@@ -5,13 +5,14 @@ Simple Key Manager with persistence to Json or file
 This library contains an in-memory (and persistable) keystore for processes that need to use or share encryption keys.
 
 ## Features
-A keystore instance supports the generation, verification, usage, and persistence of encryption keys of: RSA, AES, and ECDSA.\
-It currently leverages base .NET encryption libraries. But, can be extended to create keys in Bouncy Castle or LibSodium.\
-Both key object and keystore classes are versioned, so they can be correctly loaded by (and migrated to) newer versions.\
-A keystore updates a version counter each time its contents are changed, for easier reconciliation.\
-Persisted keystores are signed (via ECDSA) to ensure integrity and tampering. The signature is verified on load.\
-Key objects can be retrieved from the store by name or by key properties, such as type, age, status, etc...\
-Key queries are implemented using a predicate filter ([See PredicateBuilder](https://github.com/LeeWhite187/OGA.DomainBase/blob/main/OGA.DomainBase/OGA.DomainBase_SP/QueryHelpers/PredicateBuilder.cs)).
+The following is a list of key object and keystore features:
+* A keystore instance supports the generation, verification, usage, and persistence of encryption keys of: RSA, AES, and ECDSA.\
+* It currently leverages base .NET encryption libraries. But, can be extended to create keys in Bouncy Castle or LibSodium.\
+* Both key object and keystore classes are versioned, so they can be correctly loaded by (and migrated to) newer versions.\
+* A keystore updates a version counter each time its contents are changed, for easier reconciliation.\
+* Persisted keystores are signed (via ECDSA) to ensure integrity and tampering. The signature is verified on load.\
+* Key objects can be retrieved from the store by name or by key properties, such as type, age, status, etc...\
+* Key queries are implemented using a predicate filter ([See PredicateBuilder](https://github.com/LeeWhite187/OGA.DomainBase/blob/main/OGA.DomainBase/OGA.DomainBase_SP/QueryHelpers/PredicateBuilder.cs)).
 
 ## Installation
 OGA.KeyMgmt is available via NuGet:
