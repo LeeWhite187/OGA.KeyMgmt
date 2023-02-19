@@ -31,10 +31,13 @@ This library depends on:
 * [NewtonSoft.Json](https://github.com/JamesNK/Newtonsoft.Json)
 * [NLog](https://github.com/NLog/NLog/)
 
-## Structure
-This library is composed of three basic element:
-* Key Objects - Holds an encryption key of 
-* 
+## Usage
+This library is composed of two basic element:
+* Key Object - Holds a single encryption key and metadata. For asymmetric keys, can contain both private and public key data.
+* Key Store - Manages a collection of key objects using CRUD and predicate filter query functionality.\
+
+
+
 * 
 
 ## Building OGA.KeyMgmt
