@@ -64,8 +64,6 @@ Here are usage examples...
             
             // Do something with the retrieved key...
             var keystring = k4.PrivateKey;
-            
-            
 ```
 
 ## Building OGA.KeyMgmt
