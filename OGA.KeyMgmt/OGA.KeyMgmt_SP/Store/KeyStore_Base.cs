@@ -850,11 +850,6 @@ namespace OGA.KeyMgmt.Store
             return keyBytes;
         }
 
-        #endregion
-
-
-        #region Private Methods
-
         /// <summary>
         /// Used by a constructor that receives a simple storage password as a string.
         /// Returns a key object instance for localized key usage.
