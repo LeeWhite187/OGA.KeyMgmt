@@ -50,17 +50,6 @@ Here are usage examples...
 
 ### Get Oldest AES Key in Keystore
 ```
-            // Create three keys...
-            KeyStore_v2_Base.Create_New_AES_Key(Guid.NewGuid().ToString(), 256, out var k1);
-            KeyStore_v2_Base.Create_New_AES_Key(Guid.NewGuid().ToString(), 256, out var k2);
-            KeyStore_v2_Base.Create_New_AES_Key(Guid.NewGuid().ToString(), 256, out var k3);
-
-            // Add all three keys to a keystore instance...
-            var ks = new KeyStore_v2_Base();
-            var res1 = ks.AddKey_toStore(k1);
-            var res2 = ks.AddKey_toStore(k2);
-            var res3 = ks.AddKey_toStore(k3);
-            
             // Get the oldest AES key in the keystore...
             // To query the store, we need to build a predicate filter... for AES keys.
             var filter = OGA.DomainBase.QueryHelpers.PredicateBuilder.True<KeyObject_v2>(); // Filter for symmetric keys.
