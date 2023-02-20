@@ -68,6 +68,7 @@ Here are usage examples...
             if (res != 1)
             {
                 // Failed to locate an AES key in keystore.
+                return;
             }
             
             // Do something with the retrieved key...
@@ -92,6 +93,7 @@ Here are usage examples...
             if (res != 1)
             {
                 // Failed to save keystore.
+                return;
             }
 ```
 
