@@ -48,9 +48,17 @@ Here are usage examples...
             var res3 = ks.AddKey_toStore(k3);
 ```
 
-### Get Oldest AES Key in Keystore
+### Get Oldest Active Symmetric Key in Keystore
 ```
-            // Get the oldest AES key in the keystore...
+            // Create a keystore with a couple of symmetric keys...
+            KeyStore_v2_Base.Create_New_AES_Key(Guid.NewGuid().ToString(), 256, out var k1);
+            KeyStore_v2_Base.Create_New_AES_Key(Guid.NewGuid().ToString(), 256, out var k2);
+
+            var ks = new KeyStore_v2_Base();
+            var res1 = ks.AddKey_toStore(k1);
+            var res2 = ks.AddKey_toStore(k2);
+
+            // Retrieve the oldest AES key in the keystore...
             // To query the store, we need to build a predicate filter... for AES keys.
             var filter = OGA.DomainBase.QueryHelpers.PredicateBuilder.True<KeyObject_v2>(); // Filter for symmetric keys.
             filter = filter.And<KeyObject_v2>(t => t.Is_SymmetricKey()); // Filter for enabled keys.
@@ -64,6 +72,27 @@ Here are usage examples...
             
             // Do something with the retrieved key...
             var keystring = k4.PrivateKey;
+```
+
+### Save a Keystore to a File
+```
+            // Create a couple of keys...
+            KeyStore_v2_Base.Create_New_AES_Key(Guid.NewGuid().ToString(), 256, out var k1);
+            KeyStore_v2_Base.Create_New_AES_Key(Guid.NewGuid().ToString(), 256, out var k2);
+
+            // Create a file-based keystore instance...
+            // Pass in the filepath and storage password at construction...
+            var ks = new KeyStore_v2_File(store_filepath, storagepassword);
+            // Add the created keys...
+            var res1 = ks.AddKey_toStore(k1);
+            var res2 = ks.AddKey_toStore(k2);
+
+            // Save the store to disk...
+            var saveres = ks.Save();
+            if (res != 1)
+            {
+                // Failed to save keystore.
+            }
 ```
 
 ## Building OGA.KeyMgmt
