@@ -32,13 +32,14 @@ This library depends on:
 * [NLog](https://github.com/NLog/NLog/)
 
 ## Usage
-Here is some usage examples.
-Creating in-memory keystore with new keys:
+Here are usage examples...
+
+### Create In-Memory Keystore with some keys
 ```
             // Create three keys...
-            KeyStore_v2_Base.Create_New_AES_Key(Guid.NewGuid().ToString(), 256, out var k2);
-            KeyStore_v2_Base.Create_New_ECDSA_KeyPair(Guid.NewGuid().ToString(), out var k3);
-            KeyStore_v2_Base.Create_New_RSA_KeyPair(Guid.NewGuid().ToString(), 512, out var k4);
+            KeyStore_v2_Base.Create_New_AES_Key(Guid.NewGuid().ToString(), 256, out var k1);
+            KeyStore_v2_Base.Create_New_ECDSA_KeyPair(Guid.NewGuid().ToString(), out var k2);
+            KeyStore_v2_Base.Create_New_RSA_KeyPair(Guid.NewGuid().ToString(), 512, out var k3);
 
             // Add all three keys to a new in-memory keystore instance...
             var ks = new KeyStore_v2_Base();
@@ -46,14 +47,37 @@ Creating in-memory keystore with new keys:
             var res2 = ks.AddKey_toStore(k2);
             var res3 = ks.AddKey_toStore(k3);
 ```
-* Key Object - Holds a single encryption key and metadata. For asymmetric keys, can contain both private and public key data.
-* Key Store - Manages a collection of key objects using CRUD and predicate filter query functionality.\
 
+### Get Oldest AES Key in Keystore
 ```
-code blocks for commands
-```
+            // Create three keys...
+            KeyStore_v2_Base.Create_New_AES_Key(Guid.NewGuid().ToString(), 256, out var k1);
+            KeyStore_v2_Base.Create_New_AES_Key(Guid.NewGuid().ToString(), 256, out var k2);
+            KeyStore_v2_Base.Create_New_AES_Key(Guid.NewGuid().ToString(), 256, out var k3);
 
-* 
+            // Add all three keys to a keystore instance...
+            var ks = new KeyStore_v2_Base();
+            var res1 = ks.AddKey_toStore(k1);
+            var res2 = ks.AddKey_toStore(k2);
+            var res3 = ks.AddKey_toStore(k3);
+            
+            // Get the oldest AES key in the keystore...
+            // To query the store, we need to build a predicate filter... for AES keys.
+            var filter = OGA.DomainBase.QueryHelpers.PredicateBuilder.True<KeyObject_v2>(); // Filter for symmetric keys.
+            filter = filter.And<KeyObject_v2>(t => t.Is_SymmetricKey()); // Filter for enabled keys.
+            filter = filter.And<KeyObject_v2>(t => t.Status == eKeyStatus.Enabled); // Filter for private keys.
+            // Pass the query filter to the keystore...
+            var res = ks.GetOldestKey_fromStore_byFilter(filter, out var k4);
+            if (res != 1)
+            {
+                // Failed to locate an AES key in keystore.
+            }
+            
+            // Do something with the retrieved key...
+            var keystring = k4.PrivateKey;
+            
+            
+```
 
 ## Building OGA.KeyMgmt
 This library is built with the new SDK-style projects.
