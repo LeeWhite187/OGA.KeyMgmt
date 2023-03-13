@@ -1,4 +1,5 @@
-﻿using OGA.KeyMgmt.Model;
+﻿using OGA.KeyMgmt.Config;
+using OGA.KeyMgmt.Model;
 using OGA.KeyMgmt.Store;
 using System;
 using System.Text;
@@ -11,16 +12,21 @@ namespace OGA.KeyMgmt.Dev
         {
             Console.WriteLine("Hello World!");
 
-            Generate_Keystore();
+            var jsonstring = Generate_Keystore();
+
+            Verify_Keystore_Instance(jsonstring);
         }
 
-        static public void Generate_Keystore()
+        static public string Generate_Keystore()
         {
             // Accept the current encryption key...
-            string rtkey = "enter_key_here";
+            string rtkey = "";
 
+            // Create a key store with our runtime encryption key as the storage key...
+            KeyStore_v2_Base.Create_New_AES_Key("storage", 256, out var k);
+            k.PrivateKey = rtkey;
 
-            string storagepassword = rtkey;
+            var ks = new KeyStore_v2_JsonConfig(k);
 
             // Create a test key...
             var k1 = new KeyObject_v2();
@@ -39,12 +45,31 @@ namespace OGA.KeyMgmt.Dev
             k1.Uses = Guid.NewGuid().ToString();
 
             // Add the key to the store...
-            var ks = new KeyStore_v2_JsonConfig(storagepassword);
             var res = ks.AddKey_toStore(k1);
 
             var res2 = ks.Save(out var config);
 
             string jsonconfig = Newtonsoft.Json.JsonConvert.SerializeObject(config, Newtonsoft.Json.Formatting.Indented);
+
+            return jsonconfig;
+        }
+
+        static private void Verify_Keystore_Instance(string jsonstring)
+        {
+            // Accept the current encryption key...
+            string rtkey = "";
+
+            // Create a key store with our runtime encryption key as the storage key...
+            KeyStore_v2_Base.Create_New_AES_Key("storage", 256, out var k);
+            k.PrivateKey = rtkey;
+
+            var ks = new KeyStore_v2_JsonConfig(k);
+
+            // Deserialize the json config of the keystore data...
+            var ksconfig = Newtonsoft.Json.JsonConvert.DeserializeObject<KeyStore_StorageStruct>(jsonstring);
+
+            // Have the keystore load the json config...
+            var res = ks.Load(ksconfig);
 
             int x = 0;
         }
