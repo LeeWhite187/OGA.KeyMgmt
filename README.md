@@ -12,7 +12,7 @@ The following is a list of key object and keystore features:
   * RSA
   * AES
   * ECDSA
-* It currently leverages base .NET encryption libraries. But, can be extended to manage keys made/used by LibSodium, BOuncyCastle, or others.
+* It currently leverages base .NET encryption libraries. But, can be extended to manage keys made/used by LibSodium, BouncyCastle, or others.
 * Supports CRUD functionality of key objects.
 * Key objects can be retrieved from the store by name or by key properties, such as type, age, status, etc...
 * Key queries are implemented using a predicate filter (See comments at top of [PredicateBuilder](https://github.com/LeeWhite187/OGA.DomainBase/blob/main/OGA.DomainBase/OGA.DomainBase_SP/QueryHelpers/PredicateBuilder.cs)).
