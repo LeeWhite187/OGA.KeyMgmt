@@ -14,19 +14,30 @@
     <license type="expression">MIT</license>
 
     <dependencies>
+      <group targetFramework="net7.0">
+        <dependency id="Nanoid" version="2.1.0" exclude="Build,Analyzers" />
+        <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
+        <dependency id="OGA.SharedKernel" version="3.2.4" exclude="Build,Analyzers" />
+      </group>
       <group targetFramework="net6.0">
         <dependency id="Nanoid" version="2.1.0" exclude="Build,Analyzers" />
         <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
-        <dependency id="OGA.SharedKernel" version="3.0.0" exclude="Build,Analyzers" />
+        <dependency id="OGA.SharedKernel" version="3.2.4" exclude="Build,Analyzers" />
       </group>
       <group targetFramework="net5.0">
         <dependency id="Nanoid" version="2.1.0" exclude="Build,Analyzers" />
         <dependency id="Newtonsoft.Json" version="13.0.1" exclude="Build,Analyzers" />
-        <dependency id="OGA.SharedKernel" version="3.0.0" exclude="Build,Analyzers" />
+        <dependency id="OGA.SharedKernel" version="3.2.4" exclude="Build,Analyzers" />
       </group>
     </dependencies>
   </metadata>
   <files>
+    <file src=".\OGA.KeyMgmt_NET7\bin\DebugWin\net7.0\win-x64\OGA.KeyMgmt.dll" target="ref\net7.0" />
+    <file src=".\OGA.KeyMgmt_NET7\bin\DebugWin\net7.0\win-x64\OGA.KeyMgmt.dll" target="runtimes\win-x64\lib\net7.0" />
+    <file src=".\OGA.KeyMgmt_NET7\bin\DebugWin\net7.0\win-x64\OGA.KeyMgmt.pdb" target="runtimes\win-x64\lib\net7.0" />
+    <file src=".\OGA.KeyMgmt_NET7\bin\DebugLinux\net7.0\linux-x64\OGA.KeyMgmt.dll" target="runtimes\linux-x64\lib\net7.0" />
+    <file src=".\OGA.KeyMgmt_NET7\bin\DebugLinux\net7.0\linux-x64\OGA.KeyMgmt.pdb" target="runtimes\linux-x64\lib\net7.0" />
+
     <file src=".\OGA.KeyMgmt_NET6\bin\DebugWin\net6.0\win-x64\OGA.KeyMgmt.dll" target="ref\net6.0" />
     <file src=".\OGA.KeyMgmt_NET6\bin\DebugWin\net6.0\win-x64\OGA.KeyMgmt.dll" target="runtimes\win-x64\lib\net6.0" />
     <file src=".\OGA.KeyMgmt_NET6\bin\DebugWin\net6.0\win-x64\OGA.KeyMgmt.pdb" target="runtimes\win-x64\lib\net6.0" />
