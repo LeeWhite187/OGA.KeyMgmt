@@ -110,7 +110,7 @@ pipeline
 //				sh "dotnet /projects/tools/programcseditor/ProgramcsEditor.dll set 'v${version4}' '${projectFolder}_NET47/${projectName}_NET47.csproj'"
 //				sh "dotnet /projects/tools/programcseditor/ProgramcsEditor.dll set 'v${version4}' '${projectFolder}_NET5/${projectName}_NET5.csproj'"
 //				sh "dotnet /projects/tools/programcseditor/ProgramcsEditor.dll set 'v${version4}' '${projectFolder}_NET6/${projectName}_NET6.csproj'"
-//				sh "dotnet /projects/tools/programcseditor/ProgramcsEditor.dll set 'v${version4}' '${projectFolder}_NET7/${projectName}_NET6.csproj'"
+//				sh "dotnet /projects/tools/programcseditor/ProgramcsEditor.dll set 'v${version4}' '${projectFolder}_NET7/${projectName}_NET7.csproj'"
 //			}
 //		}
         stage('Set Version in NUSPEC')
