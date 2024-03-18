@@ -30,6 +30,7 @@
     <PackageReleaseNotes>(Please write the package release notes in "OGA.KeyMgmt-RELEASE-NOTES.txt".)</PackageReleaseNotes>
     <AssemblyName>OGA.KeyMgmt</AssemblyName>
     <RootNamespace>OGA.KeyMgmt</RootNamespace>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="$(Configuration.EndsWith('Win'))">
