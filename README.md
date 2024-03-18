@@ -30,6 +30,7 @@ This library depends on:
 * [OGA.SharedKernel](https://github.com/LeeWhite187/OGA.SharedKernel)
 * [NewtonSoft.Json](https://github.com/JamesNK/Newtonsoft.Json)
 * [NLog](https://github.com/NLog/NLog/)
+* [Nanoid](https://github.com/codeyu/nanoid-net)
 
 ## Usage
 Here are usage examples...
@@ -102,6 +103,7 @@ This library is built with the new SDK-style projects.
 It contains multiple projects, one for each of the following frameworks:
 * NET 5
 * NET 6
+* NET 7
 
 And, the output nuget package includes runtimes targets for:
 * linux-64
