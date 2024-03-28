@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\OGA.KeyMgmt_NET6\OGA.KeyMgmt_NET6.csproj" />
+    <ProjectReference Include="..\OGA.KeyMgmt_NET7\OGA.KeyMgmt_NET7.csproj" />
   </ItemGroup>
 
   <Import Project="..\OGA.KeyMgmt_Tests_SP\OGA.KeyMgmt_Tests_SP.projitems" Label="Shared" />

@@ -12,3 +12,5 @@
 /.vscode
 /OGA.KeyMgmt/OGA.KeyMgmt_NET7/bin
 /OGA.KeyMgmt/OGA.KeyMgmt_NET7/obj
+/OGA.KeyMgmt/OGA.KeyMgmt_NET7_Tests/bin
+/OGA.KeyMgmt/OGA.KeyMgmt_NET7_Tests/obj
